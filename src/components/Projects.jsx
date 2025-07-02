@@ -5,6 +5,11 @@ import { FaWhatsapp } from "react-icons/fa"; // Importa el ícono de WhatsApp de
 const Projects = () => {
   const projects = [
     {
+      name: "MARTIN PELACH",
+      image: "/imagee.png",
+      link: "https://mpelachprop.com.ar/",
+    },
+    {
       name: "MOLA JEWELRY",
       image: "/Screenshot 2025-05-29 130159.jpg",
       link: "https://molajewelry.com/",
@@ -31,7 +36,7 @@ const Projects = () => {
     },
     {
       name: "INOX STYLE",
-      image: "/Screenshot 2025-04-11 121220.jpg",
+      image: "/image.png",
       link: "https://inoxstyle.com.ar",
     },
   ];
