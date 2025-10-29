@@ -6,42 +6,118 @@ import { Link, useLocation } from "react-router-dom";
 const About = () => {
   const location = useLocation();
   const [showContent, setShowContent] = useState(false);
+  const [language, setLanguage] = useState("es"); // 🌍 idioma actual
 
   useEffect(() => {
     setShowContent(true);
   }, []);
 
-  const skills = [
-    {
-      icon: Code,
-      title: "Desarrollo Frontend",
-      description: "React, JavaScript, TypeScript, HTML5, CSS3",
-      color: "from-blue-500 to-cyan-500",
+  // 🗣️ Textos traducibles
+  const texts = {
+    es: {
+      title: "MARTIN FUKS - PROGRAMADOR WEB",
+      portfolio: "PORTFOLIO",
+      about: "ACERCA DE MI",
+      myStory: "Mi historia",
+      story1:
+        "Soy desarrollador frontend con más de 3 años de experiencia creando aplicaciones web modernas, funcionales y atractivas. Mi formación en diseño gráfico y experiencia como diseñador UI/UX me permiten abordar los proyectos no solo desde lo técnico, sino también desde la estética y la experiencia del usuario.",
+      story2:
+        "A lo largo de mi carrera, he trabajado en diversos proyectos, desde startups hasta empresas consolidadas, siempre enfocándome en la calidad del código y la experiencia del usuario.",
+      story3:
+        "Cuando no estoy programando, me gusta explorar nuevas tecnologías, contribuir a proyectos open source y compartir conocimiento con la comunidad de desarrolladores.",
+      experience: "Experiencia",
+      expDesc: "+3 años desarrollando aplicaciones web",
+      projects: "Proyectos",
+      projDesc: "+10 proyectos completados exitosamente",
+      clients: "Clientes",
+      clientDesc: "Satisfacción del 100% en entregas",
+      skills: [
+        {
+          icon: Code,
+          title: "Desarrollo Frontend",
+          description: "React, JavaScript, TypeScript, HTML5, CSS3",
+          color: "from-blue-500 to-cyan-500",
+        },
+        {
+          icon: Palette,
+          title: "Diseño UI/UX",
+          description: "Figma, Diseño responsivo, Tailwind CSS, Pack Adobe",
+          color: "from-purple-500 to-pink-500",
+        },
+        {
+          icon: Zap,
+          title: "Optimización",
+          description: "Performance, SEO, Accesibilidad web",
+          color: "from-yellow-500 to-orange-500",
+        },
+        {
+          icon: Heart,
+          title: "Pasión",
+          description: "Aprendizaje continuo, código limpio, innovación",
+          color: "from-red-500 to-rose-500",
+        },
+      ],
     },
-    {
-      icon: Palette,
-      title: "Diseño UI/UX",
-      description: "Figma, Diseño responsivo, Tailwind CSS, Pack Adobe",
-      color: "from-purple-500 to-pink-500",
+    en: {
+      title: "MARTIN FUKS - WEB DEVELOPER",
+      portfolio: "PORTFOLIO",
+      about: "ABOUT ME",
+      myStory: "My Story",
+      story1:
+        "I’m a frontend developer with over 3 years of experience creating modern, functional, and visually appealing web applications. My background in graphic design and experience as a UI/UX designer allow me to approach projects not only technically, but also with a strong focus on aesthetics and user experience.",
+      story2:
+        "Throughout my career, I’ve worked on various projects ranging from startups to established companies, always focusing on code quality and user experience.",
+      story3:
+        "When I’m not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.",
+      experience: "Experience",
+      expDesc: "+3 years developing web applications",
+      projects: "Projects",
+      projDesc: "+10 successfully completed projects",
+      clients: "Clients",
+      clientDesc: "100% satisfaction on deliveries",
+      skills: [
+        {
+          icon: Code,
+          title: "Frontend Development",
+          description: "React, JavaScript, TypeScript, HTML5, CSS3",
+          color: "from-blue-500 to-cyan-500",
+        },
+        {
+          icon: Palette,
+          title: "UI/UX Design",
+          description: "Figma, Responsive design, Tailwind CSS, Adobe Suite",
+          color: "from-purple-500 to-pink-500",
+        },
+        {
+          icon: Zap,
+          title: "Optimization",
+          description: "Performance, SEO, Accessibility",
+          color: "from-yellow-500 to-orange-500",
+        },
+        {
+          icon: Heart,
+          title: "Passion",
+          description: "Continuous learning, clean code, innovation",
+          color: "from-red-500 to-rose-500",
+        },
+      ],
     },
-    {
-      icon: Zap,
-      title: "Optimización",
-      description: "Performance, SEO, Accesibilidad web",
-      color: "from-yellow-500 to-orange-500",
-    },
-    {
-      icon: Heart,
-      title: "Pasión",
-      description: "Aprendizaje continuo, código limpio, innovación",
-      color: "from-red-500 to-rose-500",
-    },
-  ];
+  };
+
+  const t = texts[language];
 
   return (
-    <div className="py-5 px-6 h-[100vh] bg-black text-white overflow-auto">
+    <div className="py-5 px-6 h-[100vh] bg-black text-white overflow-auto relative">
+      {/* 🌐 Botón de idioma */}
+      <button
+        onClick={() => setLanguage(language === "es" ? "en" : "es")}
+        className="absolute top-5 right-5 bg-gray-600 px-3 py-1 rounded text-sm hover:bg-gray-700 transition"
+      >
+        {language === "es" ? "EN" : "ES"}
+      </button>
+
       <h1 className="anton-regular text-center text-4xl font-bold mb-5" style={{ padding: "20px" }}>
-        MARTIN FUKS - PROGRAMADOR WEB
+        {t.title}
       </h1>
 
       <div className="flex justify-center gap-10">
@@ -50,14 +126,14 @@ const About = () => {
             location.pathname === "/" ? "text-3xl" : "text-2xl"
           }`}
         >
-          <Link to="/">PORTFOLIO</Link>
+          <Link to="/">{t.portfolio}</Link>
         </h2>
         <h2
           className={`anton-regular text-center mb-10 transition-all duration-300 ${
             location.pathname === "/about" ? "text-3xl" : "text-2xl"
           }`}
         >
-          <Link to="/about">ACERCA DE MI</Link>
+          <Link to="/about">{t.about}</Link>
         </h2>
       </div>
 
@@ -69,43 +145,33 @@ const About = () => {
       >
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-6 montserrat-bold">Mi historia</h3>
+            <h3 className="text-2xl font-bold text-white mb-6 montserrat-bold">{t.myStory}</h3>
             <div className="space-y-4 text-white montserrat-regular">
-              <p>
-                Soy desarrollador frontend con más de 3 años de experiencia creando aplicaciones web modernas,
-                funcionales y atractivas. Mi formación en diseño gráfico y experiencia como diseñador UI/UX me
-                permiten abordar los proyectos no solo desde lo técnico, sino también desde la estética y la
-                experiencia del usuario.
-              </p>
-              <p>
-                A lo largo de mi carrera, he trabajado en diversos proyectos, desde startups hasta empresas
-                consolidadas, siempre enfocándome en la calidad del código y la experiencia del usuario.
-              </p>
-              <p>
-                Cuando no estoy programando, me gusta explorar nuevas tecnologías, contribuir a proyectos open
-                source y compartir conocimiento con la comunidad de desarrolladores.
-              </p>
+              <p>{t.story1}</p>
+              <p>{t.story2}</p>
+              <p>{t.story3}</p>
             </div>
           </div>
 
           <div className="space-y-6">
             <div className="bg-stone-700 p-6 rounded-xl">
-              <h4 className="font-semibold text-white mb-2 montserrat-bold">Experiencia</h4>
-              <p className="text-white montserrat-regular">+3 años desarrollando aplicaciones web</p>
+              <h4 className="font-semibold text-white mb-2 montserrat-bold">{t.experience}</h4>
+              <p className="text-white montserrat-regular">{t.expDesc}</p>
             </div>
             <div className="bg-stone-700 p-6 rounded-xl">
-              <h4 className="font-semibold text-white mb-2 montserrat-bold">Proyectos</h4>
-              <p className="text-white montserrat-regular">+10 proyectos completados exitosamente</p>
+              <h4 className="font-semibold text-white mb-2 montserrat-bold">{t.projects}</h4>
+              <p className="text-white montserrat-regular">{t.projDesc}</p>
             </div>
             <div className="bg-stone-700 p-6 rounded-xl">
-              <h4 className="font-semibold text-white mb-2 montserrat-bold">Clientes</h4>
-              <p className="text-white montserrat-regular">Satisfacción del 100% en entregas</p>
+              <h4 className="font-semibold text-white mb-2 montserrat-bold">{t.clients}</h4>
+              <p className="text-white montserrat-regular">{t.clientDesc}</p>
             </div>
           </div>
         </div>
 
+        {/* Skills */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
+          {t.skills.map((skill, index) => (
             <div
               key={index}
               className="group hover:shadow-xl transition-all duration-300 border border-slate-200 rounded-xl bg-stone-700 p-6 text-center"
