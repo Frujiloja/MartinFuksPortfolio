@@ -28,10 +28,10 @@ const Landing = () => {
   };
 
   const projects = [
-    { name: "BIZUPPLY", image: "/bizupply.jpg", link: "https://bizupply.com.ar/" },
-    { name: "VITACRED", image: "/vitacred.jpg", link: "https://vitacred.com.ar/" },
+    //{ name: "BIZUPPLY", image: "/bizupply.jpg", link: "https://bizupply.com.ar/" },
+    //{ name: "VITACRED", image: "/vitacred.jpg", link: "https://vitacred.com.ar/" },
     { name: "INSTITUTO DALET", image: "/dalet.jpg", link: "https://institutodalet.com.ar/" },
-    { name: "MUTUAL CERRI", image: "/Screenshot 2025-10-29 130905.jpg", link: "https://mutualcerri.com.ar/" },
+    //{ name: "MUTUAL CERRI", image: "/Screenshot 2025-10-29 130905.jpg", link: "https://mutualcerri.com.ar/" },
     { name: "MARTIN PELACH", image: "/imagee.png", link: "https://mpelachprop.com.ar/" },
     { name: "MOLA JEWELRY", image: "/Screenshot 2025-05-29 130159.jpg", link: "https://molajewelry.com/" },
     { name: "PAWWER", image: "/Screenshot 2025-04-11 123518.jpg", link: "https://entierrosmascotas.com.ar" },
