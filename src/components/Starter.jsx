@@ -30,6 +30,8 @@ const Landing = () => {
   const projects = [
     //{ name: "BIZUPPLY", image: "/bizupply.jpg", link: "https://bizupply.com.ar/" },
     //{ name: "VITACRED", image: "/vitacred.jpg", link: "https://vitacred.com.ar/" },
+    //{ name: "JOHANN", image: "/dalet.jpg", link: "https://institutodalet.com.ar/" },
+    { name: "ARUS MOTORSPORT", image: "/arus.jpg", link: "https://arusmotorsport.com/" },
     { name: "INSTITUTO DALET", image: "/dalet.jpg", link: "https://institutodalet.com.ar/" },
     { name: "IO SONO", image: "/imageee.png", link: "https://iosonoeu.com/" },
     //{ name: "MUTUAL CERRI", image: "/Screenshot 2025-10-29 130905.jpg", link: "https://mutualcerri.com.ar/" },
