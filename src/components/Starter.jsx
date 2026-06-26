@@ -29,6 +29,7 @@ const Landing = () => {
 
   const projects = [
     //{ name: "BIZUPPLY", image: "/bizupply.jpg", link: "https://bizupply.com.ar/" },
+    { name: "VENTRIX", image: "/image.png", link: "https://ventrixtech.io/" },
     { name: "JOHANN", image: "/johann.png", link: "https://restaurantejohann.com.ar/" },
     { name: "ARUS MOTORSPORT", image: "/arus.jpg", link: "https://arusmotorsport.com/" },
     { name: "VITACRED", image: "/vitacred.jpg", link: "https://vitacred.com.ar/" },
@@ -36,12 +37,12 @@ const Landing = () => {
     { name: "INSTITUTO DALET", image: "/dalet.jpg", link: "https://institutodalet.com.ar/" },
     { name: "IO SONO", image: "/imageee.png", link: "https://iosonoeu.com/" },
     { name: "MARTIN PELACH", image: "/imagee.png", link: "https://mpelachprop.com.ar/" },
-    { name: "MOLA JEWELRY", image: "/Screenshot 2025-05-29 130159.jpg", link: "https://molajewelry.com/" },
-    { name: "PAWWER", image: "/Screenshot 2025-04-11 123518.jpg", link: "https://entierrosmascotas.com.ar" },
+    //{ name: "MOLA JEWELRY", image: "/Screenshot 2025-05-29 130159.jpg", link: "https://molajewelry.com/" },
+    //{ name: "PAWWER", image: "/Screenshot 2025-04-11 123518.jpg", link: "https://entierrosmascotas.com.ar" },
     //{ name: "PROPIEDADES PELACH", image: "/Screenshot 2025-04-11 123034.jpg", link: "https://propiedadespelach.com.ar" },
     //{ name: "SEXTASIS", image: "/Screenshot 2025-04-11 123716.jpg", link: "https://sextasis.es" },
     { name: "CLASES DE FINANZAS", image: "/Screenshot 2025-04-11 123248.jpg", link: "https://clasesdefinanzas.com.ar" },
-    { name: "INOX STYLE", image: "/image.png", link: "https://inoxstyle.com.ar" },
+    { name: "INOX STYLE", image: "/imageS.png", link: "https://inoxstyle.com.ar" },
   ];
 
   return (
